@@ -1,0 +1,29 @@
+<section class="space-around">
+  <div class="container">
+      <div class="text-right">
+          <a [routerLink]= "['/crud']">Back</a>
+        </div>
+      <h4>Update User</h4>
+      <div *ngIf= "isAdded" class="alert alert-success">
+        {{confirmationString}}
+      </div>
+    <form id="formNewUser" name="formNewUser" #userData = "ngForm" (ngSubmit) = "updateUser(userData.value)">
+      <div class="form-group">
+          <label>First Name:</label>
+          <input type="text" class="form-control" id="firstName" [(ngModel)]='data.firstName' name="firstName">
+        </div>
+        <div class="form-group">
+            <label>Last Name:</label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]='data.lastName' name="lastName">
+          </div>
+      <div class="form-group">
+        <label>Email address:</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]='data.email' name="email">
+      </div>
+      <button type="submit" class="btn btn-primary" value="Update User">Submit</button>
+    </form>
+  </div>
+</section>
+
+
+ 
